@@ -1,31 +1,32 @@
-import Sidebar from "./components/Sidebar";
 import CssAndImage from "./components/CssAndImage";
-import DataFetch from "./components/DataFetch";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div>
         Hii Next js home
         <br />
-        {/* <h1>Below are server side components</h1> */}
-        <ul>
-          <li>Paranthesis folder will not come in route, pls refer allcourses folder</li>
-          <li>Square bracket folder is used for dynamic routing like for user id etc, pls refer user folder</li>
-          <li>Square bracket with ... like [...posts] folder is used for dynamic routing, will catch all routes like /blog/1 or /blog/1/asas etc, pls refer blog folder</li>
-          <li>Double square bracket with ... like [[...posts]] folder is used for dynamic routing, will catch all routes like /blog/1 or /blog/1/asas etc, and its folder is not necessary to be present in routing (can ignore /blog)</li>
-          <li>
+        <h1 className="text-2xl font-bold my-4">Routing</h1>
+        <ul className="space-y-2">
+          <ol>Paranthesis folder will not come in route, pls refer allcourses folder</ol>
+          <ol>Square bracket folder is used for dynamic routing like for user id etc, pls refer user folder</ol>
+          <ol>Square bracket with ... like [...posts] folder is used for dynamic routing, will catch all routes like /blog/1 or /blog/1/asas etc, pls refer blog folder</ol>
+          <ol>Double square bracket with ... like [[...posts]] folder is used for dynamic routing, will catch all routes like /blog/1 or /blog/1/asas etc, and its folder is not necessary to be present in routing (can ignore /blog)</ol>
+          <ol>
             For parallel routing we can use @ with folder name and add layout in its parents folder, pls refer colorbox folder
-          </li>
-          <li>Please refer admin folder for using components</li>
-          <li>Plaese check Sidebar component for Linking</li>
-          <li>Plaese check CssAndImage component for CSS and Image</li>
-          
+          </ol>
         </ul>
-        <Sidebar />
+
+        <h1 className="text-2xl font-bold my-4">Notes</h1>
+        <ul className="space-y-2">
+          <ol>Hooks dont work in server components</ol>
+          <ol>Browser interactivity is not allowed in Server components like onClick etc.</ol>
+          <ol>We can directly call api inside of server components which we do inside of useEfect in Client comp. (refer users in sidebar)</ol>
+          <ol>All components are generally Server components until we expicitly define it like in city comp (client comp)</ol>
+          <ol>Need to give full api url for server side components but notin client side (refer city in sidebar)</ol>
+          <ol>we can define metadata, layout etc. for each comp separately </ol>
+        </ul>
+
         <CssAndImage />
-        <DataFetch />
-      </main>
     </div>
   );
 }
